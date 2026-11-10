@@ -2,58 +2,62 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FormPilot</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="https://accounts.google.com/gsi/client" defer></script>
-  <script src="https://apis.google.com/js/api.js" defer></script>
-  <script type="module" src="./app.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="FormPilotは、Googleフォームとスプレッドシートを組み合わせた申込受付テンプレートです。">
+  <meta name="theme-color" content="#f7f8f2">
+  <title>FormPilot｜申込受付テンプレート</title>
+  <link rel="stylesheet" href="./intro.css">
 </head>
 <body>
+  <header class="site-header wrap">
+    <a class="brand" href="./"><span class="mark" aria-hidden="true">↗</span> FormPilot</a>
+    <nav aria-label="メインメニュー"><a href="#start">使い方</a><a href="#faq">よくある質問</a><a href="https://github.com/morigu812-svg/Form-Pilot">GitHub ↗</a></nav>
+  </header>
   <main>
-    <h1>FormPilot</h1>
-    <p>自分のGoogleフォームを作成・編集し、受付と回答を管理します。</p>
-    <p id="account"></p>
-    <button id="connect">Googleで接続</button>
-    <button id="disconnect" hidden>ログアウト</button>
-    <p id="status" role="status"></p>
-    <section id="dashboard" hidden>
-      <h2>自分のフォーム <span id="count"></span></h2>
-      <form id="create">
-        <label>フォーム名 <input name="title" required maxlength="300"></label>
-        <button>新規作成</button>
-      </form>
-      <button id="refresh">一覧を更新</button>
-      <button id="import">Driveから取り込む</button>
-      <button id="ledger">管理台帳を更新</button>
-      <a id="ledger-link" target="_blank" rel="noopener noreferrer" hidden>管理台帳を開く</a>
-      <ul id="forms"></ul>
-    </section>
-    <section id="detail" hidden>
-      <h2>フォーム編集</h2>
-      <p id="publication"></p>
-      <p><a id="native" target="_blank" rel="noopener noreferrer">Google Formsで開く</a>
-        <a id="responder" target="_blank" rel="noopener noreferrer" hidden>回答ページを開く</a></p>
-      <div class="actions">
-        <button id="start">受付開始</button>
-        <button id="stop">受付停止</button>
-        <button id="unpublish">非公開</button>
-        <button id="sharing">リンク公開設定</button>
-        <button id="trash">ゴミ箱に移動</button>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow"><span></span> GOOGLE フォーム × スプレッドシート</p>
+        <h1 id="hero-title">申込受付を、<br><em>自分のDriveで。</em></h1>
+        <p class="lead">FormPilotは、申込フォームと管理台帳のテンプレート。イベントや体験会、お問い合わせの受付を、使い慣れたGoogleの画面で始められます。</p>
+        <a class="button" href="#start">使い方を見る <span aria-hidden="true">↓</span></a>
+        <p class="note">個人Googleアカウントの利用枠内で追加費用なし</p>
       </div>
-      <form id="edit">
-        <label>タイトル <input id="title" required></label>
-        <label>説明 <textarea id="description"></textarea></label>
-        <div id="items"></div>
-        <button id="add" type="button">質問を追加</button>
-        <button>編集を保存</button>
-      </form>
-      <h3>回答</h3>
-      <button id="responses">回答を表示</button>
-      <button id="more" hidden>次のページ</button>
-      <pre id="answer-list" hidden></pre>
+      <div class="demo" aria-label="申込フォームから回答が台帳の別タブに入るイメージ">
+        <div class="demo-top"><span class="dots" aria-hidden="true">● ● ●</span><span>受付のイメージ</span></div>
+        <div class="form-card">
+          <div class="demo-label"><span class="mini purple" aria-hidden="true">▤</span> Google フォーム</div>
+          <p class="sample-title">体験会のお申し込み</p>
+          <div class="sample-input">お名前 <b>*</b></div><div class="sample-input">連絡先メールアドレス <b>*</b></div><div class="sample-input">お申し込み内容 <b>*</b></div>
+        </div>
+        <div class="flow"><span aria-hidden="true">↓</span> 回答が自動で追加</div>
+        <div class="sheet-card">
+          <div class="demo-label"><span class="mini green" aria-hidden="true">▦</span> Google スプレッドシート</div>
+          <div class="tabs"><span>管理台帳</span><strong>フォームの回答 1</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="start" aria-labelledby="start-title">
+      <div class="section-heading"><p class="eyebrow">GET STARTED</p><h2 id="start-title">受付を始める3ステップ</h2></div>
+      <ol class="steps">
+        <li><span class="number">01</span><h3>原本をコピー</h3><p>共有された申込フォームと管理台帳を、自分のGoogle Driveにコピーします。用途に合わせてフォーム名と設問を編集します。</p></li>
+        <li><span class="number">02</span><h3>回答先をつなぐ</h3><p>コピーしたフォームの「回答」から「スプレッドシートにリンク」を選び、「既存のスプレッドシート」で台帳のコピーを指定します。</p></li>
+        <li><span class="number">03</span><h3>回答リンクを配る</h3><p>フォームを公開し、回答者用リンクを案内します。受付状況やリンクは管理台帳に記録します。</p></li>
+      </ol>
+      <p class="guide"><a href="https://support.google.com/docs/answer/2917686?hl=ja">回答先の接続をGoogle公式ヘルプで確認 ↗</a></p>
+    </section>
+
+    <section class="faq-band" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq">
+        <div><p class="eyebrow">FAQ</p><h2 id="faq-title">よくある質問</h2></div>
+        <div>
+          <details open><summary>回答はどこで見られますか？</summary><p>管理台帳と同じスプレッドシート内の「フォームの回答 1」などのタブです。台帳のタブは、フォーム名や受付状況を記録するために使います。</p></details>
+          <details><summary>テンプレートはどうやって入手しますか？</summary><p>テンプレートの配布元からGoogleフォームと管理台帳の共有リンクを受け取り、両方を自分のDriveにコピーします。</p></details>
+          <details><summary>利用料はかかりますか？</summary><p>Googleフォームとスプレッドシートの標準機能を使う方式です。個人Googleアカウントの利用枠内なら、FormPilot用のサーバーや独自ドメインの契約は不要です。</p></details>
+        </div>
+      </div>
     </section>
   </main>
+  <footer class="wrap"><a class="brand" href="./"><span class="mark" aria-hidden="true">↗</span> FormPilot</a><a href="https://github.com/morigu812-svg/Form-Pilot">プロジェクトを見る ↗</a></footer>
 </body>
 </html>
-
