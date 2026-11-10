@@ -1,0 +1,12 @@
+:root { font: 16px/1.6 system-ui, sans-serif; color: #182536; background: #f3f6fa; }
+main { max-width: 52rem; margin: 2rem auto; padding: 0 1rem; }
+section { margin: 1rem 0; padding: 1.25rem; border-radius: .75rem; background: white; }
+button, input, textarea, select { font: inherit; }
+button { padding: .3rem .65rem; margin: .2rem; cursor: pointer; }
+button:disabled { cursor: default; }
+#edit label { display: block; margin: .5rem 0; }
+#edit input:not([type=checkbox]), textarea { box-sizing: border-box; width: 100%; }
+fieldset { margin: .75rem 0; border: 1px solid #bdc7d1; border-radius: .4rem; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f3f6fa; padding: 1rem; }
+#status { min-height: 1.6em; }
+[hidden] { display: none !important; }
